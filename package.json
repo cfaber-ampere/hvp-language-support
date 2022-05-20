@@ -12,6 +12,10 @@
 		"name": "Zhenghao He",
 		"email": "Johnmc104@qq.com"
 	},
+    "repository": {
+		"type": "git",
+		"url": "https://github.com/Johnmc104/hvp-language-support"
+	},
     "categories": [
         "Programming Languages"
     ], 
