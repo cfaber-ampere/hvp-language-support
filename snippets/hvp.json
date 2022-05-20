@@ -1,0 +1,27 @@
+{
+    "hvp_plan":{
+        "prefix":"pl",
+        "body":[
+            "plan ${1:plan_name};",
+            "\t$0",
+            "endplan\n"
+        ],
+        "description":"hvp basic"
+    },
+    "hvp_metric":{
+        "prefix":"met",
+        "body":[
+            "metric ${1:metric_type} ${2:metric_name};",
+            "\t$0",
+            "endmetric\n"
+        ],
+        "description":"hvp basic"
+    },
+    "hvp_attribute":{
+        "prefix":"att",
+        "body":[
+            "attribute ${1:attribute_type} ${2:attribute_name};\n"
+        ],
+        "description":"hvp basic"
+    }
+}

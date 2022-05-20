@@ -1,0 +1,40 @@
+{
+    "name": "hvp",
+    "displayName": "hvp-language-support",
+    "description": "Hierarchical Verification Plan",
+    "version": "0.0.1",
+    "publisher": "zhhe",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "license": "Apache",
+	"author": {
+		"name": "Zhenghao He",
+		"email": "Johnmc104@qq.com"
+	},
+    "categories": [
+        "Programming Languages"
+    ], 
+    "keywords": [
+		"HDL",
+		"UVM"
+	],
+    "contributes": {
+        "languages": [{
+            "id": "hvp",
+            "aliases": ["hvp", "hvp"],
+            "extensions": [".hvp"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "hvp",
+            "scopeName": "source.hvp",
+            "path": "./syntaxes/hvp.tmLanguage.json"
+        }],
+        "snippets":[{
+            "language": "hvp",
+            "path": "./snippets/hvp.json"
+        }
+        ]
+    }
+}

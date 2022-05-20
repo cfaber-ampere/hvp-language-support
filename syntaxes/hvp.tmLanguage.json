@@ -1,0 +1,322 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"fileTypes":["hvp"],
+	"name": "hvp",
+	"scopeName": "source.hvp",
+	"patterns": [
+		{"include": "#dec_plan"}
+		
+	],
+	"repository": {
+		"type_attribute":{
+			"patterns": [
+				{
+					"match":"\\b(integer|real|string|enum|set)\\b",
+					"name": "storage.attribute.hvp"
+				}
+			]
+		},		
+		"type_metric":{
+			"patterns": [
+				{
+					"match":"\\b(ratio|integer|real|enum|aggregate)\\b",
+					"name": "storage.metric.hvp"
+				}
+			]
+		},
+		"punctuation":{
+			"patterns": [
+				{
+
+				},
+				{"include": "#strings"}
+			]
+		},
+
+		"dec_plan":{
+			"patterns":[
+				{
+					"begin": "(?i)^\\s*(plan)\\b",
+					"beginCaptures": {
+						"1": {"name": "storage.type.plan.hvp"}
+					},
+					"end": "(?i)^\\s*(endplan)\\b",
+					"endCaptures": {
+						"1": {"name": "storage.type.plan.hvp"}
+					},
+					"name": "meta.plan.hvp",
+					"patterns":[
+						{
+							"comment": "plan declaration construct to identify the entity name.",
+							"begin": "\\G",
+							"end": "(?=(?:\\;))",
+							"name": "meta.plan.declaration.hvp",
+							"patterns":[
+								{
+									"match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\b",
+									"name": "entity.name.type.hvp"
+								}
+							]
+						},
+						{"include": "#dec_attribute"},
+						{"include": "#dec_annotation"},
+						{"include": "#dec_metric"},
+						{"include": "#dec_feature"},
+						{"include": "#dec_subplan"},
+
+						{"include": "#spec_cov"},
+						{"include": "#spec_owner"}
+					]
+				},
+				{
+					"match": "\\b(endplan)\\b",
+					"name": "invalid.illegal.stray-keyword.hvp"
+				}
+			]
+			
+		},
+		"spec_cov":{
+			"patterns":[
+				{
+          "match": "\\b(Line|Cond|FSM|Toggle|Branch|Assert|Group|Group.count)\\b",
+					"name": "variable.language.hvp"
+				}
+			]
+		},
+		"spec_owner":{
+			"patterns":[
+        {
+					"begin": "(?i)^\\s*(owner)\\b",
+					"beginCaptures": {
+    				"1": {"name": "storage.type.plan.hvp"}
+					},
+  				"end": "(?=(?:\\;))",
+          "name": "meta.plan.declaration.hvp",
+          "patterns": [
+            {"include": "#strings"}
+          ]
+        }
+
+    ]
+		},
+		"dec_attribute":{
+			"patterns":[
+				{
+					"begin": "(?i)^\\s*(attribute)\\b",
+					"beginCaptures": {
+					  "1": {"name": "storage.type.attribute.hvp"}
+					},
+					"end": "(?=(?:\\;))",
+					"endCaptures": {
+					  "1": {"name": "storage.type.attribute.hvp"}
+					},
+					"name": "meta.attribute.hvp",
+					"patterns": [
+						{"include": "#type_attribute"}
+					]
+				}
+			]
+		},
+		"dec_annotation":{
+			"patterns":[
+				{
+					"begin": "(?i)^\\s*(annotation)\\b",
+					"beginCaptures": {
+					  "1": {"name": "storage.type.annotation.hvp"}
+					},
+					"end": "(?=(?:\\;))",
+					"endCaptures": {
+					  "1": {"name": "storage.type.annotation.hvp"}
+					},
+					"name": "meta.annotation.hvp",
+					"patterns": [
+						{"include": "#type_attribute"}
+					]
+				}
+			]
+		},
+		"dec_metric":{
+			"begin": "(?i)^\\s*(metric)\\b",
+			"beginCaptures": {
+			  "1": {"name": "storage.type.metric.hvp"}
+			},
+			"end": "(?i)^\\s*(endmetric)\\b",
+			"endCaptures": {
+			  "1": {"name": "storage.type.metric.hvp"}
+			},
+			"name": "meta.metric.hvp",
+			"patterns":[
+				{
+					"comment": "metric declaration construct to identify the entity name.",
+					"begin": "\\G",
+					"end": "(?=(?:\\;))",
+					"name": "meta.metric.declaration.hvp",
+					"patterns":[
+						{
+							"match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\b",
+							"name": "entity.name.type.hvp"
+						}
+					]
+				},
+				{"include": "#spec_metric"},
+				{"include": "#type_metric"}
+			]
+		},
+
+		"spec_metric":{
+			"patterns":[
+				{
+          "match": "\\b(goal)\\b",
+					"name": "variable.language.hvp"
+				},
+				{
+          "match": "\\b(aggregator)\\b",
+					"name": "variable.language.hvp",
+					"patterns":[
+						{
+							"match": "\\b(max|min|sum|average|uniquesum)\\b",
+							"name": "variable.language.hvp"
+						}
+						
+					]
+				}
+			]
+		},
+		"dec_feature":{
+			"patterns":[
+				{
+					"begin": "(?i)^\\s*(feature)\\b",
+					"beginCaptures": {
+						"1": {"name": "storage.type.feature.hvp"}
+					},
+					"end": "(?i)^\\s*(endfeature)\\b",
+					"endCaptures": {
+						"1": {"name": "storage.type.feature.hvp"}
+					},
+					"name": "meta.feature.hvp",
+					"patterns":[
+						{
+							"comment": "feature declaration construct to identify the entity name.",
+							"begin": "\\G",
+							"end": "(?=(?:\\;))",
+							"name": "meta.feature.declaration.hvp",
+							"patterns":[
+								{
+									"match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\b",
+									"name": "entity.name.type.hvp"
+								}
+							]
+						},
+						{"include": "#dec_feature"},
+						{"include": "#dec_measure"},
+						{"include": "#spec_feature"}
+					]
+				}
+			]
+		},
+		"dec_measure":{
+			"patterns":[
+				{
+					"begin": "(?i)^\\s*(measure)\\b",
+					"beginCaptures": {
+						"1": {"name": "storage.type.measure.hvp"}
+					},
+					"end": "(?i)^\\s*(endmeasure)\\b",
+					"endCaptures": {
+						"1": {"name": "storage.type.measure.hvp"}
+					},
+					"name": "meta.measure.hvp",
+					"patterns":[
+						{
+							"comment": "measure declaration construct to identify the entity name.",
+							"begin": "\\G",
+							"end": "(?=(?:\\;))",
+							"name": "meta.measure.declaration.hvp",
+							"patterns":[
+								{
+									"match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\b",
+									"name": "entity.name.type.hvp"
+								}
+							]
+						},
+						{"include": "#dec_source"}
+					]
+				}
+			]
+		},
+		"dec_source":{
+			"patterns":[
+				{
+          "begin": "(?i)^\\s*(source)\\b",
+          "beginCaptures": {
+            "1": {"name": "storage.type.source.hvp"}
+          },
+          "end": "(?=(?:\\;))",
+					"name": "meta.source.declaration.hvp",
+					"patterns": [
+						{"include": "#strings"}
+					]
+				}
+			]
+		},
+		"spec_feature":{
+			"patterns":[
+				{
+          "begin": "(?i)^\\s*(weight)\\b",
+          "beginCaptures": {
+            "1": {"name": "storage.type.feature.hvp"}
+          },
+          "end": "(?=(?:\\;))",
+					"name": "meta.feature.hvp"
+				},
+				{
+          "begin": "(?i)^\\s*(owner)\\b",
+          "beginCaptures": {
+            "1": {"name": "storage.type.feature.hvp"}
+          },
+          "end": "(?=(?:\\;))",
+					"name": "meta.feature.hvp",
+          "patterns": [
+            {"include": "#strings"}
+          ]
+				},
+				{
+          "begin": "(?i)^\\s*(phase)\\b",
+          "beginCaptures": {
+            "1": {"name": "storage.type.feature.hvp"}
+          },
+          "end": "(?=(?:\\;))",
+					"name": "meta.feature.hvp"
+				},
+				{
+					"begin": "(?i)^\\s*(description)\\b",
+					"beginCaptures": {
+    				"1": {"name": "storage.type.feature.hvp"}
+					},
+  				"end": "(?=(?:\\;))",
+          "name": "meta.feature.hvp",
+          "patterns": [
+            {"include": "#strings"}
+          ]
+        }
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"begin": "\"",
+          "beginCaptures": {
+            "0": {"name": "punctuation.definition.string.hvp"}
+          },
+          "end": "\"",
+          "endCaptures": {
+            "0": {"name": "punctuation.definition.string.hvp"}
+          },
+          "name": "string.quoted.double.hvp"
+				}
+			]
+		}
+		
+	}
+	
+}
