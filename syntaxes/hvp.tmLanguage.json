@@ -78,37 +78,36 @@
 		"spec_cov":{
 			"patterns":[
 				{
-          "match": "\\b(Line|Cond|FSM|Toggle|Branch|Assert|Group|Group.count)\\b",
+					"match": "\\b(Line|Cond|FSM|Toggle|Branch|Assert|Group|Group.count)\\b",
 					"name": "variable.language.hvp"
 				}
 			]
 		},
 		"spec_owner":{
 			"patterns":[
-        {
+				{
 					"begin": "(?i)^\\s*(owner)\\b",
 					"beginCaptures": {
-    				"1": {"name": "storage.type.plan.hvp"}
+					"1": {"name": "storage.type.plan.hvp"}
 					},
-  				"end": "(?=(?:\\;))",
-          "name": "meta.plan.declaration.hvp",
-          "patterns": [
-            {"include": "#strings"}
-          ]
-        }
-
-    ]
+					"end": "(?=(?:\\;))",
+					"name": "meta.plan.declaration.hvp",
+					"patterns": [
+						{"include": "#strings"}
+					]
+				}
+			]
 		},
 		"dec_attribute":{
 			"patterns":[
 				{
 					"begin": "(?i)^\\s*(attribute)\\b",
 					"beginCaptures": {
-					  "1": {"name": "storage.type.attribute.hvp"}
+						"1": {"name": "storage.type.attribute.hvp"}
 					},
 					"end": "(?=(?:\\;))",
 					"endCaptures": {
-					  "1": {"name": "storage.type.attribute.hvp"}
+						"1": {"name": "storage.type.attribute.hvp"}
 					},
 					"name": "meta.attribute.hvp",
 					"patterns": [
@@ -122,11 +121,11 @@
 				{
 					"begin": "(?i)^\\s*(annotation)\\b",
 					"beginCaptures": {
-					  "1": {"name": "storage.type.annotation.hvp"}
+						"1": {"name": "storage.type.annotation.hvp"}
 					},
 					"end": "(?=(?:\\;))",
 					"endCaptures": {
-					  "1": {"name": "storage.type.annotation.hvp"}
+						"1": {"name": "storage.type.annotation.hvp"}
 					},
 					"name": "meta.annotation.hvp",
 					"patterns": [
@@ -138,11 +137,11 @@
 		"dec_metric":{
 			"begin": "(?i)^\\s*(metric)\\b",
 			"beginCaptures": {
-			  "1": {"name": "storage.type.metric.hvp"}
+				"1": {"name": "storage.type.metric.hvp"}
 			},
 			"end": "(?i)^\\s*(endmetric)\\b",
 			"endCaptures": {
-			  "1": {"name": "storage.type.metric.hvp"}
+				"1": {"name": "storage.type.metric.hvp"}
 			},
 			"name": "meta.metric.hvp",
 			"patterns":[
@@ -166,11 +165,11 @@
 		"spec_metric":{
 			"patterns":[
 				{
-          "match": "\\b(goal)\\b",
+					"match": "\\b(goal)\\b",
 					"name": "variable.language.hvp"
 				},
 				{
-          "match": "\\b(aggregator)\\b",
+					"match": "\\b(aggregator)\\b",
 					"name": "variable.language.hvp",
 					"patterns":[
 						{
@@ -247,11 +246,11 @@
 		"dec_source":{
 			"patterns":[
 				{
-          "begin": "(?i)^\\s*(source)\\b",
-          "beginCaptures": {
-            "1": {"name": "storage.type.source.hvp"}
-          },
-          "end": "(?=(?:\\;))",
+					"begin": "(?i)^\\s*(source)\\b",
+					"beginCaptures": {
+						"1": {"name": "storage.type.source.hvp"}
+					},
+					"end": "(?=(?:\\;))",
 					"name": "meta.source.declaration.hvp",
 					"patterns": [
 						{"include": "#strings"}
@@ -262,61 +261,59 @@
 		"spec_feature":{
 			"patterns":[
 				{
-          "begin": "(?i)^\\s*(weight)\\b",
-          "beginCaptures": {
-            "1": {"name": "storage.type.feature.hvp"}
-          },
-          "end": "(?=(?:\\;))",
+					"begin": "(?i)^\\s*(weight)\\b",
+					"beginCaptures": {
+						"1": {"name": "storage.type.feature.hvp"}
+					},
+					"end": "(?=(?:\\;))",
 					"name": "meta.feature.hvp"
 				},
 				{
-          "begin": "(?i)^\\s*(owner)\\b",
-          "beginCaptures": {
-            "1": {"name": "storage.type.feature.hvp"}
-          },
-          "end": "(?=(?:\\;))",
+					"begin": "(?i)^\\s*(owner)\\b",
+					"beginCaptures": {
+					"1": {"name": "storage.type.feature.hvp"}
+					},
+					"end": "(?=(?:\\;))",
 					"name": "meta.feature.hvp",
-          "patterns": [
-            {"include": "#strings"}
-          ]
+					"patterns": [
+						{"include": "#strings"}
+					]
 				},
 				{
-          "begin": "(?i)^\\s*(phase)\\b",
-          "beginCaptures": {
-            "1": {"name": "storage.type.feature.hvp"}
-          },
-          "end": "(?=(?:\\;))",
+					"begin": "(?i)^\\s*(phase)\\b",
+					"beginCaptures": {
+						"1": {"name": "storage.type.feature.hvp"}
+					},
+					"end": "(?=(?:\\;))",
 					"name": "meta.feature.hvp"
 				},
 				{
 					"begin": "(?i)^\\s*(description)\\b",
 					"beginCaptures": {
-    				"1": {"name": "storage.type.feature.hvp"}
+						"1": {"name": "storage.type.feature.hvp"}
 					},
-  				"end": "(?=(?:\\;))",
-          "name": "meta.feature.hvp",
-          "patterns": [
-            {"include": "#strings"}
-          ]
-        }
+					"end": "(?=(?:\\;))",
+					"name": "meta.feature.hvp",
+					"patterns": [
+						{"include": "#strings"}
+					]
+				}
 			]
 		},
 		"strings": {
 			"patterns": [
 				{
 					"begin": "\"",
-          "beginCaptures": {
-            "0": {"name": "punctuation.definition.string.hvp"}
-          },
-          "end": "\"",
-          "endCaptures": {
-            "0": {"name": "punctuation.definition.string.hvp"}
-          },
-          "name": "string.quoted.double.hvp"
+					"beginCaptures": {
+						"0": {"name": "punctuation.definition.string.hvp"}
+					},
+					"end": "\"",
+					"endCaptures": {
+						"0": {"name": "punctuation.definition.string.hvp"}
+					},
+					"name": "string.quoted.double.hvp"
 				}
 			]
 		}
-		
 	}
-	
 }
