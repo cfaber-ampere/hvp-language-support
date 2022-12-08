@@ -261,14 +261,6 @@
 		"spec_feature":{
 			"patterns":[
 				{
-					"begin": "(?i)^\\s*(weight)\\b",
-					"beginCaptures": {
-						"1": {"name": "storage.type.feature.hvp"}
-					},
-					"end": "(?=(?:\\;))",
-					"name": "meta.feature.hvp"
-				},
-				{
 					"begin": "(?i)^\\s*(owner)\\b",
 					"beginCaptures": {
 					"1": {"name": "storage.type.feature.hvp"}
@@ -280,7 +272,18 @@
 					]
 				},
 				{
-					"begin": "(?i)^\\s*(phase)\\b",
+					"begin": "(?i)^\\s*(at_least)\\b",
+					"beginCaptures": {
+						"1": {"name": "storage.type.feature.hvp"}
+					},
+					"end": "(?=(?:\\;))",
+					"name": "meta.feature.hvp",
+					"patterns": [
+						{"include": "#strings"}
+					]
+				},
+				{
+					"begin": "(?i)^\\s*(weight)\\b",
 					"beginCaptures": {
 						"1": {"name": "storage.type.feature.hvp"}
 					},
@@ -289,6 +292,83 @@
 				},
 				{
 					"begin": "(?i)^\\s*(description)\\b",
+					"beginCaptures": {
+						"1": {"name": "storage.type.feature.hvp"}
+					},
+					"end": "(?=(?:\\;))",
+					"name": "meta.feature.hvp",
+					"patterns": [
+						{"include": "#strings"}
+					]
+				},
+				{
+					"begin": "(?i)^\\s*(test.expected)\\b",
+					"beginCaptures": {
+						"1": {"name": "storage.type.feature.hvp"}
+					},
+					"end": "(?=(?:\\;))",
+					"name": "meta.feature.hvp",
+					"patterns": [
+						{"include": "#strings"}
+					]
+				},
+				{
+					"begin": "(?i)^\\s*(Type)\\b",
+					"beginCaptures": {
+						"1": {"name": "storage.type.feature.hvp"}
+					},
+					"end": "(?=(?:\\;))",
+					"name": "meta.feature.hvp",
+					"patterns": [
+						{"include": "#strings"}
+					]
+				},
+				{
+					"begin": "(?i)^\\s*(Priority)\\b",
+					"beginCaptures": {
+						"1": {"name": "storage.type.feature.hvp"}
+					},
+					"end": "(?=(?:\\;))",
+					"name": "meta.feature.hvp",
+					"patterns": [
+						{"include": "#strings"}
+					]
+				},
+				{
+					"begin": "(?i)^\\s*(Goal)\\b",
+					"beginCaptures": {
+						"1": {"name": "storage.type.feature.hvp"}
+					},
+					"end": "(?=(?:\\;))",
+					"name": "meta.feature.hvp",
+					"patterns": [
+						{"include": "#strings"}
+					]
+				},
+				{
+					"begin": "(?i)^\\s*(Environment)\\b",
+					"beginCaptures": {
+						"1": {"name": "storage.type.feature.hvp"}
+					},
+					"end": "(?=(?:\\;))",
+					"name": "meta.feature.hvp",
+					"patterns": [
+						{"include": "#strings"}
+					]
+				},
+				{
+					"begin": "(?i)^\\s*(Project)\\b",
+					"beginCaptures": {
+						"1": {"name": "storage.type.feature.hvp"}
+					},
+					"end": "(?=(?:\\;))",
+					"name": "meta.feature.hvp",
+					"patterns": [
+						{"include": "#strings"}
+					]
+				},
+				{
+					"begin": "(?i)^\\s*(Status)\\b",
 					"beginCaptures": {
 						"1": {"name": "storage.type.feature.hvp"}
 					},
