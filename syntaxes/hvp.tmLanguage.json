@@ -320,7 +320,11 @@
 					"end": "(?=(?:\\;))",
 					"name": "meta.feature.hvp",
 					"patterns": [
-						{"include": "#strings"}
+						{"include": "#strings"},
+						{
+							"match": "\\b(Coded|NotCoded|NotApplicable)\\b",
+							"name": "variable.language.hvp"
+						}
 					]
 				},
 				{

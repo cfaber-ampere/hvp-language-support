@@ -2,19 +2,19 @@
     "name": "hvp",
     "displayName": "hvp-language-support",
     "description": "Hierarchical Verification Plan",
-    "version": "0.0.1",
-    "publisher": "zhhe",
+    "version": "0.0.2",
+    "publisher": "faberc",
     "engines": {
         "vscode": "^1.0.0"
     },
     "license": "Apache",
 	"author": {
-		"name": "Zhenghao He",
-		"email": "Johnmc104@qq.com"
+		"name": "Chuck Faber",
+		"email": "cfaber@amperecomputing.com"
 	},
     "repository": {
 		"type": "git",
-		"url": "https://github.com/Johnmc104/hvp-language-support"
+		"url": "https://github.com/faberc/hvp-language-support"
 	},
     "categories": [
         "Programming Languages"
