@@ -4,8 +4,8 @@
 	"name": "hvp",
 	"scopeName": "source.hvp",
 	"patterns": [
-		{"include": "#dec_plan"}
-		
+		{"include": "#dec_plan"},
+		{"include": "#comment"}
 	],
 	"repository": {
 		"type_attribute":{
@@ -26,9 +26,6 @@
 		},
 		"punctuation":{
 			"patterns": [
-				{
-
-				},
 				{"include": "#strings"}
 			]
 		},
@@ -65,7 +62,8 @@
 						{"include": "#dec_subplan"},
 
 						{"include": "#spec_cov"},
-						{"include": "#spec_owner"}
+						{"include": "#spec_owner"},
+						{"include": "#comment"}
 					]
 				},
 				{
@@ -93,7 +91,8 @@
 					"end": "(?=(?:\\;))",
 					"name": "meta.plan.declaration.hvp",
 					"patterns": [
-						{"include": "#strings"}
+						{"include": "#strings"},
+						{"include": "#comment"}
 					]
 				}
 			]
@@ -111,7 +110,8 @@
 					},
 					"name": "meta.attribute.hvp",
 					"patterns": [
-						{"include": "#type_attribute"}
+						{"include": "#type_attribute"},
+						{"include": "#comment"}
 					]
 				}
 			]
@@ -129,7 +129,8 @@
 					},
 					"name": "meta.annotation.hvp",
 					"patterns": [
-						{"include": "#type_attribute"}
+						{"include": "#type_attribute"},
+						{"include": "#comment"}
 					]
 				}
 			]
@@ -158,10 +159,10 @@
 					]
 				},
 				{"include": "#spec_metric"},
-				{"include": "#type_metric"}
+				{"include": "#type_metric"},
+				{"include": "#comment"}
 			]
 		},
-
 		"spec_metric":{
 			"patterns":[
 				{
@@ -208,7 +209,8 @@
 						},
 						{"include": "#dec_feature"},
 						{"include": "#dec_measure"},
-						{"include": "#spec_feature"}
+						{"include": "#spec_feature"},
+						{"include": "#comment"}
 					]
 				}
 			]
@@ -238,7 +240,8 @@
 								}
 							]
 						},
-						{"include": "#dec_source"}
+						{"include": "#dec_source"},
+						{"include": "#comment"}
 					]
 				}
 			]
@@ -253,7 +256,8 @@
 					"end": "(?=(?:\\;))",
 					"name": "meta.source.declaration.hvp",
 					"patterns": [
-						{"include": "#strings"}
+						{"include": "#strings"},
+						{"include": "#comment"}
 					]
 				}
 			]
@@ -320,11 +324,7 @@
 					"end": "(?=(?:\\;))",
 					"name": "meta.feature.hvp",
 					"patterns": [
-						{"include": "#strings"},
-						{
-							"match": "\\b(Coded|NotCoded|NotApplicable)\\b",
-							"name": "variable.language.hvp"
-						}
+						{"include": "#strings"}
 					]
 				},
 				{
@@ -396,6 +396,38 @@
 						"0": {"name": "punctuation.definition.string.hvp"}
 					},
 					"name": "string.quoted.double.hvp"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+				}
+			]
+		},
+		"comment": {
+			"patterns": [
+				{
+					"begin": "(^[ \\t]+)?((//)(?:\\s*((@)internal)(?=\\s|$))?)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.whitespace.comment.leading"
+						},
+						"2": {
+							"name": "comment.line.double-slash"
+						},
+						"3": {
+							"name": "punctuation.definition.comment"
+						},
+						"4": {
+							"name": "storage.type.internaldeclaration"
+						},
+						"5": {
+							"name": "punctuation.decorator.internaldeclaration"
+						}
+					},
+					"end": "(?=$)",
+					"contentName": "comment.line.double-slash.js"
 				}
 			]
 		}
