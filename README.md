@@ -15,8 +15,8 @@ Clone this repo into `~/.vscode/extensions` or `~/.vscode-server/extensions`
 ### Changes
  - Added highlighting for Ampere custom feature fields.
 
-# License and source information
+# License and Source Information
 Apache
 
-The original source can be found @ [GitHub](https://github.com/Johnmc104/hvp-language-support)
+This is a fork from the original source which can be found @ [Johnmc104/hvp-language-support](https://github.com/Johnmc104/hvp-language-support)
 
