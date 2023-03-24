@@ -6,7 +6,7 @@
             "\t$0",
             "endplan\n"
         ],
-        "description":"hvp basic"
+        "description":"add plan"
     },
     "hvp_metric":{
         "prefix":"met",
@@ -15,14 +15,14 @@
             "\t$0",
             "endmetric\n"
         ],
-        "description":"hvp basic"
+        "description":"add metric"
     },
     "hvp_attribute":{
         "prefix":"att",
         "body":[
             "attribute ${1:attribute_type} ${2:attribute_name};\n"
         ],
-        "description":"hvp basic"
+        "description":"add attribute"
     },
     "hvp_feature":{
         "prefix":"feat",
@@ -36,6 +36,7 @@
             "\tProject = ${7:project_name};",
             "\tStatus = ${8:status};",
             "endfeature\n"
-        ]
+        ],
+        "description":"add feature"
     }
 }
