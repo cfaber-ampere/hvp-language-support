@@ -25,18 +25,36 @@
         "description":"add attribute"
     },
     "hvp_feature":{
-        "prefix":"feat",
-        "body:": [
-            "feature \"${1:feature_name}\";",
-            "\towner = \"${2:owner_name}\";",
-            "\tdescription = \"${3:description_text}\";",
-            "\tType = ${4:feature_type};",
-            "\tPriority = ${5:priority};",
-            "\tEnvironment = \\{${6:environments}\\};",
-            "\tProject = ${7:project_name};",
-            "\tStatus = ${8:status};",
-            "endfeature\n"
+        "prefix":"feature",
+        "body":[
+            "feature \"${1:FEATURE_NAME}\";",
+            "\towner = \"${2:OWNER}\";",
+            "\tdescription = \"${3:DESCRIPTION}\";",
+            "\tType = ${4:TYPE};",
+            "\tPriority = ${5:PRIORITY};",
+            "\tEnvironment = \\{${6:ENVIRONMENT}\\};",
+            "\tProject = ${7:PROJECT};",
+            "\tStatus = ${8:STATUS};",
+            "endfeature\n$0"
         ],
-        "description":"add feature"
+        "description":"add new feature"
+    },
+    "hvp_group_measure":{
+        "prefix":"measure Group",
+        "body":[
+            "measure Group GroupMeasure;",
+            "\tsource = \"group: cpu_tb.th.cpu.Mec.Lsu.lsu_cov::${1:COVERGROUP}.${2:COVERPOINT}\";",
+            "endmeasure\n$0"
+        ],
+        "description":"add new group measure"
+    },
+    "hvp_assert_measure":{
+        "prefix":"measure Assert",
+        "body":[
+            "measure Assert AssertMeasure;",
+            "\tsource = \"property: cpu_tb.th.cpu.Mec.Lsu.lsu_cov.${1:PROPERTY_NAME}\";",
+            "endmeasure\n$0"
+        ],
+        "description":"add new assert measure"
     }
 }
