@@ -35,7 +35,7 @@
             "\tEnvironment = {${6:ENVIRONMENT}\\};",
             "\tProject = ${7:PROJECT};",
             "\tStatus = ${8:STATUS};",
-            "endfeature\n$0"
+            "endfeature$0"
         ],
         "description":"add new feature"
     },
@@ -44,7 +44,7 @@
         "body":[
             "measure Group GroupMeasure;",
             "\tsource = \"group: cpu_tb.th.cpu.Mec.Lsu.lsu_cov::${1:COVERGROUP}.${2:COVERPOINT}\";",
-            "endmeasure\n$0"
+            "endmeasure$0"
         ],
         "description":"add new group measure"
     },
@@ -53,7 +53,7 @@
         "body":[
             "measure Assert AssertMeasure;",
             "\tsource = \"property: cpu_tb.th.cpu.Mec.Lsu.lsu_cov.${1:PROPERTY_NAME}\";",
-            "endmeasure\n$0"
+            "endmeasure$0"
         ],
         "description":"add new assert measure"
     }
