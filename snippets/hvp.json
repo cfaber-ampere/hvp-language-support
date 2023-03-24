@@ -32,7 +32,7 @@
             "\tdescription = \"${3:DESCRIPTION}\";",
             "\tType = ${4:TYPE};",
             "\tPriority = ${5:PRIORITY};",
-            "\tEnvironment = \\{${6:ENVIRONMENT}\\};",
+            "\tEnvironment = {${6:ENVIRONMENT}\\};",
             "\tProject = ${7:PROJECT};",
             "\tStatus = ${8:STATUS};",
             "endfeature\n$0"
