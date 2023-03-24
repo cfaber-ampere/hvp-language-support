@@ -23,5 +23,19 @@
             "attribute ${1:attribute_type} ${2:attribute_name};\n"
         ],
         "description":"hvp basic"
+    },
+    "hvp_feature":{
+        "prefix":"feat",
+        "body:": [
+            "feature \"${1:feature_name}\";",
+            "\towner = \"${2:owner_name}\";",
+            "\tdescription = \"${3:description_text}\";",
+            "\tType = ${4:feature_type};",
+            "\tPriority = ${5:priority};",
+            "\tEnvironment = \\{${6:environments}\\};",
+            "\tProject = ${7:project_name};",
+            "\tStatus = ${8:status};",
+            "endfeature\n"
+        ]
     }
 }

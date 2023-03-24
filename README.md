@@ -14,6 +14,9 @@ Clone this repo into `~/.vscode/extensions` or `~/.vscode-server/extensions`, th
 ## [1.0.1]
 ### Changes
  - Added highlighting for Ampere custom feature fields.
+## [1.0.2]
+### Changes
+ - Adding new code snippets
 
 # License and Source Information
 Apache
