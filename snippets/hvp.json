@@ -25,8 +25,8 @@
         "description":"add attribute"
     },
     "hvp_feature":{
-        "prefix":"feat",
-        "body:": [
+        "prefix":"fea",
+        "body":[
             "feature \"${1:feature_name}\";",
             "\towner = \"${2:owner_name}\";",
             "\tdescription = \"${3:description_text}\";",
@@ -37,6 +37,6 @@
             "\tStatus = ${8:status};",
             "endfeature\n"
         ],
-        "description":"add feature"
+        "description":"add new feature"
     }
 }
