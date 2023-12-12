@@ -17,6 +17,9 @@ Clone this repo into `~/.vscode/extensions` on your host machine, then enter VS 
 ## [1.0.2]
 ### Changes
  - Adding new code snippets
+## [1.0.3]
+### Changes
+ - Adds Identifier field
 
 # License and Source Information
 Apache
