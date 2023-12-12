@@ -35,6 +35,7 @@
             "\tEnvironment = {${6:ENVIRONMENT}\\};",
             "\tProject = ${7:PROJECT};",
             "\tStatus = ${8:STATUS};",
+            "\tIdentifier = ${8:IDENTIFIER};",
             "endfeature$0"
         ],
         "description":"add new feature"

@@ -381,6 +381,17 @@
 					"patterns": [
 						{"include": "#strings"}
 					]
+				},
+				{
+					"begin": "(?i)^\\s*(Identifier)\\b",
+					"beginCaptures": {
+						"1": {"name": "storage.type.feature.hvp"}
+					},
+					"end": "(?=(?:\\;))",
+					"name": "meta.feature.hvp",
+					"patterns": [
+						{"include": "#strings"}
+					]
 				}
 			]
 		},
