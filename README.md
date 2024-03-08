@@ -3,7 +3,8 @@
 This extension incorporates syntax highlighting for `Hierarchical Verification Plan`, Hierarchically describe a verification plan.
 
 ## Installation
-Clone this repo into `~/.vscode/extensions` on your host machine, then enter VS code and enable it in the extensions panel.
+Clone this repo into `~/.vscode/extensions` on your host machine. 
+Then in VS code use Ctrl+P to open the command palette and type `>Developer: Install Extension from Location...`. Then point to the location where the repo is cloned and hit "OK".
 
 ## Features
  - Syntax highlighting and basic syntax checking capabilites for hvp.
