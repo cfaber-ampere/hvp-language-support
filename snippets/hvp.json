@@ -44,7 +44,7 @@
         "prefix":"measure Group",
         "body":[
             "measure Group GroupMeasure;",
-            "\tsource = \"group: cpu_tb.th.cpu.Mec.Lsu.lsu_cov::${1:COVERGROUP}.${2:COVERPOINT}\";",
+            "\tsource = \"group: cpu_tb.th.cpu.Eel.Mec.Lsu.lsu_cov::${1:COVERGROUP}.${2:COVERPOINT}\";",
             "endmeasure$0"
         ],
         "description":"add new group measure"
@@ -53,7 +53,7 @@
         "prefix":"measure Assert",
         "body":[
             "measure Assert AssertMeasure;",
-            "\tsource = \"property: cpu_tb.th.cpu.Mec.Lsu.lsu_cov.${1:PROPERTY_NAME}\";",
+            "\tsource = \"property: cpu_tb.th.cpu.Eel.Mec.Lsu.lsu_cov.${1:PROPERTY_NAME}\";",
             "endmeasure$0"
         ],
         "description":"add new assert measure"
