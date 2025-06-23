@@ -36,6 +36,7 @@
             "\tProject = ${7:PROJECT};",
             "\tStatus = ${8:STATUS};",
             "\tIdentifier = ${9:IDENTIFIER};",
+            "\tTags = {${10:TAGS}\\};",
             "endfeature$0"
         ],
         "description":"add new feature"

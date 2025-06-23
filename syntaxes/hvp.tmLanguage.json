@@ -361,6 +361,17 @@
 					]
 				},
 				{
+					"begin": "(?i)^\\s*(Tags)\\b",
+					"beginCaptures": {
+						"1": {"name": "storage.type.feature.hvp"}
+					},
+					"end": "(?=(?:\\;))",
+					"name": "meta.feature.hvp",
+					"patterns": [
+						{"include": "#strings"}
+					]
+				},
+				{
 					"begin": "(?i)^\\s*(Project)\\b",
 					"beginCaptures": {
 						"1": {"name": "storage.type.feature.hvp"}
